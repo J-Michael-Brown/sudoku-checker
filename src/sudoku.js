@@ -9,7 +9,7 @@ export function viable(arrayOfNine) {
   }
 }
 
-function checkAllRows(sudokuBoard) {
+export function checkAllRows(sudokuBoard) {
   var valid = true;
   sudokuBoard.forEach(function(row) {
     if(!viable(row)) {
@@ -19,45 +19,26 @@ function checkAllRows(sudokuBoard) {
   return valid;
 }
 
-function checkAllColumns(sudokuBoard) {
-    var masterCheckArray = [];
-    var checkArray1 = [];
-    var checkArray2 = [];
-    var checkArray3 = [];
-    var checkArray4 = [];
-    var checkArray5 = [];
-    var checkArray6 = [];
-    var checkArray7 = [];
-    var checkArray8 = [];
-    var checkArray9 = [];
+export function checkAllColumns(sudokuBoard) {
+  // sudokuBoard.forEach(function(rowArray) {
+  // go through master array and build arrays representing columns
+  for (var columnIndex = 0; columnIndex < sudokuBoard[0].length; columnIndex++) {
+    var column = [];
+    var viability = true;
+    for (var rowIndex = 0; rowIndex < sudokuBoard.length; rowIndex++){// for each row, push the number in the given column
+      column.push(sudokuBoard[rowIndex][columnIndex]);
+    }
+    if(!viable(column)){
+      viability = false;
+    }
+  }
+  return viability;
 
-  sudokuBoard.forEach(function(array) {
-    checkArray1.push(array[0])
-    checkArray2.push(array[1])
-    checkArray3.push(array[2])
-    checkArray4.push(array[3])
-    checkArray5.push(array[4])
-    checkArray6.push(array[5])
-    checkArray7.push(array[6])
-    checkArray8.push(array[7])
-    checkArray9.push(array[8])
-  });
-    masterCheckArray.push(checkArray1)
-    masterCheckArray.push(checkArray2)
-    masterCheckArray.push(checkArray3)
-    masterCheckArray.push(checkArray4)
-    masterCheckArray.push(checkArray5)
-    masterCheckArray.push(checkArray6)
-    masterCheckArray.push(checkArray7)
-    masterCheckArray.push(checkArray8)
-    masterCheckArray.push(checkArray9)
+}
 
-    return checkAllRows(masterCheckArray);
-
-};
-
-function checkBoxes(sudokuBoard) {
+export function checkAllBoxes(sudokuBoard) {
   var valid = true;
-  
-  return valid;
+
+
+  return [valid, sudokuBoard];
 }
