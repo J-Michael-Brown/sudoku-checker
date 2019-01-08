@@ -55,3 +55,9 @@ function checkAllColumns(sudokuBoard) {
     return checkAllRows(masterCheckArray);
 
 };
+
+function checkBoxes(sudokuBoard) {
+  var valid = true;
+  
+  return valid;
+}
