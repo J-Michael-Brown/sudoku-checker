@@ -11,7 +11,7 @@ td {
 }
 input {
   font-weight: bold;
-  color: #d12993;
+  color: #c10d80;
   padding: 0;
   border: 0;
   text-align: center;
@@ -24,7 +24,7 @@ input {
 
 .dark {
   background-color: #515151;
-  color: #ef4fb4;
+  color: #dd85bd;
 }
 
 .dark:disabled {
