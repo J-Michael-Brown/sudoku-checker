@@ -10,7 +10,8 @@ td {
   vertical-align: middle;
 }
 input {
-  color: #000000;
+  font-weight: bold;
+  color: #d12993;
   padding: 0;
   border: 0;
   text-align: center;
@@ -20,8 +21,22 @@ input {
   background-color: #FFFFFF;
   outline: none;
 }
-input:disabled {
-  background-color: #EEEEEE;
+
+.dark {
+  background-color: #515151;
+  color: #ef4fb4;
+}
+
+.dark:disabled {
+  color: white;
+}
+
+.light {
+  background-color: lightgrey;
+}
+
+.light:disabled {
+  color: black;
 }
 
 #cell-0,  #cell-1,  #cell-2  { border-top:    2px solid #000000; }
